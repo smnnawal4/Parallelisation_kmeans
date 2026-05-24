@@ -1,4 +1,4 @@
-# K-Means Parallèle sur CPU — Projet teachcompute
+# K-Means Parallèle sur CPU 
 
 ## Structure
 
@@ -7,6 +7,7 @@ projet_kmeans/
 ├── src/
 │   ├── kmeans_numpy.py          # Implémentation 1 : NumPy séquentiel
 │   ├── kmeans_parallel.py       # Implémentation 2 : wrapper C++ OpenMP
+│   ├── kmeans_parallel_v2.py       # Implémentation 2 : wrapper C++ OpenMP+ // de la phase update
 │   └── kmeans_cpp/
 │       ├── kmeans.h             # Header C++
 │       ├── kmeans.cpp           # Code C++ + OpenMP

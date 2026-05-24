@@ -21,6 +21,7 @@ find_package(pybind11 REQUIRED)
 # Module Python
 pybind11_add_module(kmeans_cpp
     kmeans.cpp
+    kmeans_v2.cpp
     binding.cpp
 )
 

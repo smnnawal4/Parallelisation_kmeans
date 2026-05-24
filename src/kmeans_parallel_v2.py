@@ -1,5 +1,5 @@
 """
-K-Means C++ v2 — wrapper Python.
+K-Means C++ v2: wrapper Python.
 Les DEUX phases sont parallèles :
   - Assignment : #pragma omp parallel for (identique à v1)
   - Update     : buffers locaux par thread + fusion via critical
@@ -36,7 +36,7 @@ def kmeans_parallel_v2(
     verbose: bool = False
 ) -> tuple:
     """
-    K-Means C++ v2 — les DEUX phases sont parallèles.
+    K-Means C++ v2: les DEUX phases sont parallèles.
 
     Phase ASSIGNMENT : #pragma omp parallel for schedule(static)
     Phase UPDATE     : buffers locaux par thread → pas de race condition
@@ -44,9 +44,7 @@ def kmeans_parallel_v2(
 
     L'ordre de fusion des buffers dépend du scheduling des threads,
     ce qui peut introduire des différences ~1e-6 en fp32 par rapport
-    à la version séquentielle (non-associativité de l'addition flottante,
-    cf. Dupré, exercice 'random order for a sum').
-    """
+    à la version séquentielle (non-associativité de l'addition flottante)    """
     if not _CPP_AVAILABLE:
         raise RuntimeError("Module C++ non compilé")
 
